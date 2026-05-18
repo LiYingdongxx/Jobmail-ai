@@ -1,0 +1,98 @@
+[
+  {
+    "id": "jobmail-001",
+    "subject": "【一面邀请】AI产品实习生视频面试安排",
+    "sender": "campus-hiring@visionai.com",
+    "date": "2026-04-15 09:10:00",
+    "body": "你好，感谢你投递我司 AI 产品实习生岗位。我们邀请你参加 4 月 17 日下午 3:00 的视频面试，请于 4 月 16 日 18:00 前回复是否参加，并准备 3 分钟自我介绍和一个项目案例分享。",
+    "label": "interview"
+  },
+  {
+    "id": "jobmail-002",
+    "subject": "Online Assessment for AIGC Product Intern",
+    "sender": "assessment@globalagent.ai",
+    "date": "2026-04-15 10:20:00",
+    "body": "Hello, thank you for your interest in the AIGC Product Intern role. Please complete the online assessment before Apr 19, 11:59 PM. The assessment will take around 60 minutes. If you have any issues, contact recruiter@globalagent.ai.",
+    "label": "interview"
+  },
+  {
+    "id": "jobmail-003",
+    "subject": "补充材料通知：请提交成绩单与在读证明",
+    "sender": "recruitment@smartedu.cn",
+    "date": "2026-04-15 11:00:00",
+    "body": "同学你好，我们已完成简历初筛。请于 4 月 18 日中午 12 点前补充发送本科成绩单、硕士在读证明以及英文简历 PDF 版本，以便进入后续评估流程。",
+    "label": "materials"
+  },
+  {
+    "id": "jobmail-004",
+    "subject": "Portfolio Request for Product Strategy Internship",
+    "sender": "talent@finrobotics.com",
+    "date": "2026-04-15 11:35:00",
+    "body": "Hi Li, we are interested in your background. Please submit one portfolio that best demonstrates your AI product thinking, together with your latest transcript, by Apr 20 at 5 PM.",
+    "label": "materials"
+  },
+  {
+    "id": "jobmail-005",
+    "subject": "Re: 申请进度更新",
+    "sender": "hr@agentstudio.com",
+    "date": "2026-04-15 13:00:00",
+    "body": "你好，我们已经收到你上周的跟进邮件。目前业务团队仍在统一评估候选人，预计将在下周二前完成讨论。如有进一步安排，我们会第一时间与你联系。",
+    "label": "follow_up"
+  },
+  {
+    "id": "jobmail-006",
+    "subject": "Status Update on Your Application",
+    "sender": "recruiter@autoflow.io",
+    "date": "2026-04-15 13:40:00",
+    "body": "Hello, thank you for following up. Your application is still under review by the hiring manager. We expect to provide an update within five business days. No further action is required from your side for now.",
+    "label": "follow_up"
+  },
+  {
+    "id": "jobmail-007",
+    "subject": "Offer沟通：请确认最早到岗日期",
+    "sender": "offer@modelworks.ai",
+    "date": "2026-04-15 15:10:00",
+    "body": "你好，我们很高兴推进你进入 Offer 沟通阶段。请确认你是否可以在 5 月 20 日到岗，并于 4 月 18 日 18:00 前回复你的联系电话及最早入职时间。",
+    "label": "offer"
+  },
+  {
+    "id": "jobmail-008",
+    "subject": "Next Step: Internship Offer Confirmation",
+    "sender": "campus.offer@seaviewtech.com",
+    "date": "2026-04-15 16:00:00",
+    "body": "Dear Li, we are pleased to move forward with your internship offer. Please confirm whether you can onboard on June 1 and share your phone number before Apr 21, 6 PM.",
+    "label": "offer"
+  },
+  {
+    "id": "jobmail-009",
+    "subject": "很遗憾：本次申请暂未通过",
+    "sender": "noreply@cloudagent.com",
+    "date": "2026-04-15 17:20:00",
+    "body": "感谢你关注我司 AI 产品培训生岗位。经过综合评估，我们暂未推进你的申请进入下一轮。感谢你的时间，祝你后续求职顺利。",
+    "label": "rejection"
+  },
+  {
+    "id": "jobmail-010",
+    "subject": "Application Update for AI Operations Internship",
+    "sender": "no-reply@nextbrain.io",
+    "date": "2026-04-15 17:40:00",
+    "body": "Thank you for your application. After careful review, we regret to inform you that we will not move forward with your candidacy for the AI Operations Internship at this time.",
+    "label": "rejection"
+  },
+  {
+    "id": "jobmail-011",
+    "subject": "春招上岸秘籍限时领取，9.9 元抢 AI 面试题",
+    "sender": "promotion@careerads.cn",
+    "date": "2026-04-15 19:00:00",
+    "body": "最新春招资料上线，限时优惠，点击领取 AI 产品经理面试题、简历模板和保过班优惠券。今日下单立减 50 元，机会难得。",
+    "label": "spam"
+  },
+  {
+    "id": "jobmail-012",
+    "subject": "Exclusive Discount for Premium Interview Course",
+    "sender": "sales@jobboosters.com",
+    "date": "2026-04-15 19:20:00",
+    "body": "Special promotion for spring recruiting season. Buy our premium AI interview course today and get an exclusive discount, bonus templates, and limited-time coaching offers.",
+    "label": "spam"
+  }
+]
