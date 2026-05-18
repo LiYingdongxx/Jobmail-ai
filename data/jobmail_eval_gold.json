@@ -1,0 +1,86 @@
+[
+  {
+    "id": "jobmail-001",
+    "label": "interview",
+    "position": "AI Product Intern",
+    "deadline": "4 月 16 日 18:00",
+    "deadline_iso": "2026-04-16 18:00"
+  },
+  {
+    "id": "jobmail-002",
+    "label": "interview",
+    "position": "AIGC Product Intern",
+    "deadline": "Apr 19, 11:59 PM",
+    "deadline_iso": "2026-04-19 23:59"
+  },
+  {
+    "id": "jobmail-003",
+    "label": "materials",
+    "position": "未知岗位",
+    "deadline": "4 月 18 日中午 12 点",
+    "deadline_iso": "2026-04-18 12:00"
+  },
+  {
+    "id": "jobmail-004",
+    "label": "materials",
+    "position": "Product Strategy Intern",
+    "deadline": "Apr 20 at 5 PM",
+    "deadline_iso": "2026-04-20 17:00"
+  },
+  {
+    "id": "jobmail-005",
+    "label": "follow_up",
+    "position": "未知岗位",
+    "deadline": "下周二",
+    "deadline_iso": "2026-04-21 18:00"
+  },
+  {
+    "id": "jobmail-006",
+    "label": "follow_up",
+    "position": "未知岗位",
+    "deadline": "within five business days",
+    "deadline_iso": "2026-04-22 18:00"
+  },
+  {
+    "id": "jobmail-007",
+    "label": "offer",
+    "position": "未知岗位",
+    "deadline": "4 月 18 日 18:00",
+    "deadline_iso": "2026-04-18 18:00"
+  },
+  {
+    "id": "jobmail-008",
+    "label": "offer",
+    "position": "未知岗位",
+    "deadline": "Apr 21, 6 PM",
+    "deadline_iso": "2026-04-21 18:00"
+  },
+  {
+    "id": "jobmail-009",
+    "label": "rejection",
+    "position": "AI Product Trainee",
+    "deadline": "未识别",
+    "deadline_iso": "未识别"
+  },
+  {
+    "id": "jobmail-010",
+    "label": "rejection",
+    "position": "AI Operations Intern",
+    "deadline": "未识别",
+    "deadline_iso": "未识别"
+  },
+  {
+    "id": "jobmail-011",
+    "label": "spam",
+    "position": "未知岗位",
+    "deadline": "未识别",
+    "deadline_iso": "未识别"
+  },
+  {
+    "id": "jobmail-012",
+    "label": "spam",
+    "position": "未知岗位",
+    "deadline": "未识别",
+    "deadline_iso": "未识别"
+  }
+]
