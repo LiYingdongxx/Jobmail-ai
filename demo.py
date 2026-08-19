@@ -34,12 +34,25 @@ class EmailDemo:
         }
         
         self.classification_rules = {
-            'interview_keywords': ['面试', 'interview', '一面', '二面', '笔试', '测评', 'assessment'],
-            'materials_keywords': ['材料', '作品集', '成绩单', '证明', 'portfolio', 'document', 'submit'],
-            'follow_up_keywords': ['进度', '跟进', '等待', 'status', 'update', 'follow up'],
-            'offer_keywords': ['offer', '录用', '入职', 'onboard', '到岗'],
-            'rejection_keywords': ['未进入', '感谢关注', '未通过', 'regret', 'not move forward'],
-            'spam_keywords': ['广告', '推广', '营销', '优惠', 'promotion', 'discount', '立减']
+            'interview_keywords': ['面试', 'interview', '一面', '二面', '笔试', '测评', 'assessment', 'coding task'],
+            'materials_keywords': [
+                '材料', '作品集', '成绩单', '证明', '补交', '补充', '附件', '项目说明',
+                'portfolio', 'document', 'submit', 'upload', 'attachment', 'github', 'missing'
+            ],
+            'follow_up_keywords': [
+                '进度', '跟进', '等待', '复核', '评估中', '核验', 'status', 'update',
+                'follow up', 'under review', 'no further action', 'talent pool', 'decision'
+            ],
+            'offer_keywords': ['offer', '录用', '拟录用', '录用意向', '入职', 'onboard', '到岗', 'pre-offer'],
+            'rejection_keywords': [
+                '未进入', '感谢关注', '未通过', '暂未通过', '不进入后续', '暂不安排',
+                'regret', 'not move forward', 'not to proceed', 'cannot offer', 'not proceed'
+            ],
+            'spam_keywords': [
+                '广告', '推广', '营销', '优惠', '立减', '课程', '资料包', '保过班', '模板',
+                '内推名额', '会员', '特价', 'promotion', 'discount', 'course', 'template',
+                'bootcamp', 'buy today', 'limited time', 'coaching'
+            ]
         }
         
         self.reply_templates = {
@@ -131,7 +144,7 @@ class EmailDemo:
 
         normalized = self.normalize_whitespace(position)
         mapping_rules = [
-            (r"(?:ai|aigc)\s*产品\s*实习生|ai product intern(?:ship)?", "AI Product Intern"),
+            (r"(?:ai|aigc)\s*产品\s*实习(?:生)?|ai product intern(?:ship)?", "AI Product Intern"),
             (r"aigc product intern(?:ship)?", "AIGC Product Intern"),
             (r"product strategy intern(?:ship)?", "Product Strategy Intern"),
             (r"ai operations intern(?:ship)?", "AI Operations Intern"),
@@ -149,16 +162,16 @@ class EmailDemo:
         if email_type == "spam":
             return "未知岗位"
 
-        role_suffix_pattern = r"(?:实习生|培训生|工程师|经理|专员|顾问|Internship|Intern|Engineer|Manager|Specialist|Analyst)$"
-        core_role_keyword_pattern = r"(?:AI|AIGC|LLM|大模型|人工智能|产品|运营|数据|Product|Operations|Data|ML)"
+        role_suffix_pattern = r"(?:实习|实习生|培训生|工程师|经理|专员|顾问|Internship|Intern|Engineer|Manager|Specialist|Analyst)$"
+        core_role_keyword_pattern = r"(?:AI|AIGC|LLM|大模型|人工智能|产品|运营|数据|测试|评测|助理|Product|Operations|Data|ML)"
         noise_pattern = r"(?:面试题|课程|优惠|模板|保过班|promotion|discount|course|template)"
         non_role_prefix_pattern = r"^(?:online assessment|application update|portfolio request|next step|offer沟通|补充材料通知|re)\s*(?:for|:|：)\s*"
         non_role_token_pattern = r"(?:assessment|request|update|next step|offer confirmation|领取|点击|感谢你关注我司|沟通阶段)"
         position_patterns = [
-            r"(?:岗位|职位|role|position)\s*[:：]?\s*([A-Za-z\u4e00-\u9fa50-9/&+\-\s]{2,40}(?:Internship|Intern|实习生|培训生|工程师|经理|专员))",
-            r"((?:(?:AI|AIGC|大模型|人工智能)\s*)?(?:(?:产品|运营|算法|数据|研发)\s*)?(?:经理|实习生|培训生|工程师|专员))",
-            r"((?:AI|AIGC|LLM|ML|Product|Operations|Data)(?:\s+[A-Za-z]+){0,3}\s+(?:Internship|Intern|Engineer|Manager|Specialist|Analyst))",
-            r"((?:[A-Za-z]+(?:\s+[A-Za-z]+){0,2}\s+)?(?:Product|Operations|Data|AI|AIGC|ML|LLM|Strategy)(?:\s+[A-Za-z]+){0,2}\s+(?:Internship|Intern|Engineer|Manager|Specialist|Analyst))"
+            r"(?:岗位|职位|role|position)\s*[:：]?\s*([A-Za-z\u4e00-\u9fa50-9/&+\-\s]{2,40}(?:Internship|Intern|实习|实习生|培训生|工程师|经理|专员))",
+            r"((?:(?:AI|AIGC|大模型|人工智能)\s*)?(?:(?:产品|运营|算法|数据|研发|应用|测试|评测|助理)\s*)?(?:经理|实习|实习生|培训生|工程师|专员))",
+            r"((?:AI|AIGC|LLM|ML|Prompt|Evaluation|Application|Testing|Backend|Product|Operations|Data)(?:\s+[A-Za-z]+){0,3}\s+(?:Internship|Intern|Engineer|Manager|Specialist|Analyst))",
+            r"((?:[A-Za-z]+(?:\s+[A-Za-z]+){0,2}\s+)?(?:Product|Operations|Data|AI|AIGC|ML|LLM|Strategy|Prompt|Evaluation|Application|Testing|Backend)(?:\s+[A-Za-z]+){0,2}\s+(?:Internship|Intern|Engineer|Manager|Specialist|Analyst))"
         ]
 
         candidates = []
@@ -229,7 +242,7 @@ class EmailDemo:
         date_time_pattern = rf"{date_pattern}(?:\s*(?:,|，|at|@|上午|下午|中午|晚上)?\s*{time_pattern})?"
 
         explicit_deadline_patterns = [
-            rf"(?:请于|于|务必在|需在)\s*({date_time_pattern})\s*(?:前|之前)",
+            rf"(?:请于|请在|于|在|务必在|需在)\s*({date_time_pattern})\s*(?:前|之前)",
             rf"(?:before|by|no later than)\s+({date_time_pattern})",
             rf"(?:deadline(?:\s+is)?|due(?:\s+date)?(?:\s+is)?)\s*[:：]?\s*({date_time_pattern})"
         ]
@@ -547,14 +560,21 @@ class EmailDemo:
                               if keyword in text_content)
         
         # 确定类型
-        scores = {
+        if rejection_score > 0:
+            email_type = "rejection"
+        elif offer_score > 0:
+            email_type = "offer"
+        elif follow_up_score > 0 and follow_up_score >= materials_score and follow_up_score >= interview_score:
+            email_type = "follow_up"
+        else:
+            scores = {
             'interview': interview_score,
             'materials': materials_score,
             'follow_up': follow_up_score,
             'offer': offer_score,
             'rejection': rejection_score
-        }
-        email_type = max(scores, key=scores.get) if max(scores.values()) > 0 else 'other'
+            }
+            email_type = max(scores, key=scores.get) if max(scores.values()) > 0 else 'other'
         
         # 确定优先级
         priority = 'high' if any(
